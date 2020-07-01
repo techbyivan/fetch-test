@@ -16,12 +16,12 @@
         .then(resp=>resp.json()) 
         .then(data=>console.log(data))  
 
-        //test 3 - Fetch call catches an error because 'resp' call is in JSON format not TXT
+        //test 3 - Fetch call CATCHES an error because 'resp' call is in JSON format not TXT
         fetch("data.txt")
         .then(resp=>resp.json())
         .then(data=>console.log(data))
 
-        //test 4 - Fetch call throws an error because 'resp' call is in JSON format not TXT
+        //test 4 - Fetch call THROWS an error because 'resp' call is in JSON format not TXT
         fetch("data.txt")
         .then(resp=>resp.json())
         .then(data=>console.log(data))
