@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        //test 1 - Server is LIVE with 200 status
+        //test 1 - Server & API is LIVE with 200 status
         fetch("data.json") 
         .then(resp=>console.log(resp)) 
 
@@ -21,7 +21,7 @@
         .then(resp=>resp.json())
         .then(data=>console.log(data))
 
-        //test 4 - Fetch call THROWS an error because 'resp' call is in JSON format not TXT
+        //test 4 - Fetch call purposely THROWS an error because 'resp' call is in JSON format not TXT
         fetch("data.txt")
         .then(resp=>resp.json())
         .then(data=>console.log(data))
