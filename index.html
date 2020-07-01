@@ -3,49 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Promise Exercise</title>
 </head>
 <body>
     <script>
-        // //test 1
-        // fetch("data.json")
-        // .then(resp=>console.log(resp))
+        //test 1 - Server is LIVE with 200 status
+        fetch("data.json") 
+        .then(resp=>console.log(resp)) 
 
-        // //test 2
-        // fetch("data.json")
-        // .then(resp=>resp.json())
-        // .then(data=>console.log(data))
+        //test 2 - Fetch function calls API, stores the response in "resp" & logs data into console.
+        fetch("data.json") 
+        .then(resp=>resp.json()) 
+        .then(data=>console.log(data))  
 
-        // //test 3
-        // fetch("data.txt")
-        // .then(resp=>resp.json())
-        // .then(data=>console.log(data))
+        //test 3 - Fetch call catches an error because 'resp' call is in JSON format not TXT
+        fetch("data.txt")
+        .then(resp=>resp.json())
+        .then(data=>console.log(data))
 
-        // //test 4
-        // fetch("data.txt")
-        // .then(resp=>resp.json())
-        // .then(data=>console.log(data))
-        // .catch(error=>console.log(error))
+        //test 4 - Fetch call throws an error because 'resp' call is in JSON format not TXT
+        fetch("data.txt")
+        .then(resp=>resp.json())
+        .then(data=>console.log(data))
+        .catch(error=>console.log(error))
 
-        // //test 5
-        // fetch("foo.txt")
-        // .then(resp=>resp.json())
-        // .then(data=>console.log(data))
-        // .catch(error=>console.log(error))
+        //test 5 - Fetch call catches an error because 'foo.txt' is not a file within the program
+        fetch("foo.txt")
+        .then(resp=>resp.json())
+        .then(data=>console.log(data))
+        .catch(error=>console.log(error))
 
-        // //test 6
-        // fetch("data.json")
-        // .then(resp=>resp.json())
-        // .then(data=>console.log(data))
-        // .then(moreData=>console.log(moreData))
-        // .catch(error=>console.log(error))
+        //test 6 - Fetch call returns responses in JSON, then stores it in "moreData", if an error is caught, it will log an error
+        fetch("data.json")
+        .then(resp=>resp.json())
+        .then(data=>console.log(data))
+        .then(moreData=>console.log(moreData))
+        .catch(error=>console.log(error))
 
-        // //test 7
-        // fetch("data.json")
-        // .then(resp=>resp.json())
-        // .then(data=>[...data, {name:'Ally', age:8}, {name:"Mark", age:6} ])
-        // .then(moreData=>console.log(moreData))
-        // .catch(error=>console.log(error))
+        //test 7 - Fetch call returns responses in JSON, it then creates and appends new array of [2] data elements onto existing data, 
+        //then stores it in "moreData" variable, if an error is caught, it will log an error 
+        fetch("data.json")
+        .then(resp=>resp.json())
+        .then(data=>[...data, {name:'Ally', age:8}, {name:"Mark", age:6} ])
+        .then(moreData=>console.log(moreData))
+        .catch(error=>console.log(error))
 
     </script>
 </body>
