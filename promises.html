@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Promises</title>
+	</head>
+	<body>
+		<script>
+            let num = 1;
+			let myPromise = new Promise((resolve, reject)=>{
+                if (num > 0) {
+                    resolve("This is a GOOD number")
+                }   else {
+                    reject("This is a BAD number")
+                }
+
+            });
+            
+            myPromise
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+            .then(() => console.log(`and the number is ${num}`))
+
+		</script>
+	</body>
+</html>
